@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" href="s.css" />
+</head>
+
+<body>
+    <p id="p1">Touch Events Touch events are triggered when a touch-sensitive surface is touched at one or more points. When a touch surface is touched, the point of contact between the finger and the screen is known as the touch point. Until recently, these touch events usually indicated that the device in use was a mobile device, such as a smartphone or tablet. However, increasingly, laptops or desktops may have touch-sensitive surfaces in the form of a trackpad or touch screen.1
+        <br><br>
+        <a href="#p2">Page 2</a>
+    </p>
+    <p id="p2" class="hide">The DOMContentLoaded Event Another useful HTML5 event that occurs at the page level is the DOMContentLoaded event that is triggered when the contents of the page have been parsed, which is when the DOM of the page has been built and is safe to operate on. The load event of the window can also be used to invoke code once the page has loaded, but the difference with this event is that it waits until the document has completely loaded, including any resources, such as stylesheets and images.1 With the DOMContentLoaded event, we can start our JavaScript processing much earlier and without blocking the loading of the page; this can help our page’s performance. This event is attached to the document:
+        <br><br>
+        <a href="#p1">Page 1</a>
+        <a href="#p3">Page 3</a>
+    </p>
+    <p id="p3" class="hide">Inside the event listener, we can log the newURL property to the console so that we can see an example of it. Then, we use an if conditional to check whether the newURL property exists and whether the resulting string left from splitting the property at the hash character is equal to either intro or products. We can set the textContent property of the h1 element in each branch of the if statement:
+    <br><br>
+        <a href="#p2">Page 2</a>
+        <a href="#p4">Page 4</a>
+    </p>
+    <p id="p4" class="hide">
+        TouchLists and Touch Objects The three unique touch properties of the TouchEvent object all contain TouchList collections, which contain individual Touch objects. TouchList collections have a length property that indicates how many Touch objects are in the collection. Devices that support multiple touch points can have more than one Touch object in these collections. The individual Touch objects contain useful information about the touch point. They contain a series of properties, listed in the following table:
+        <br><br>
+        <a href="#p3">Page 3</a>
+        <a href="#p1">Page 1</a>
+    </p>
+    <script type="text/javascript">
+    	var D = document;
+    	var p1 = D.getElementById('p1');
+    	var p2 = D.getElementById('p2');
+    	var p3 = D.getElementById('p3');
+    	var p4 = D.getElementById('p4');
+
+    	 
+    	window.addEventListener('hashchange', function (event) {
+
+    	    if(event.newURL) { 
+    	    	    	    	switch(event.newURL.split('#')[1]){
+    	    		case "p1": 	p1.classList.remove("hide");
+    	    					p4.classList.add("hide");
+    	    					p2.classList.add("hide");
+    	    					break;
+    	    		case "p2":  p2.classList.remove("hide");
+    	    					p1.classList.add("hide");
+    	    					p3.classList.add("hide");
+    	    					break;
+    	    		case "p3": 	p3.classList.remove("hide");
+    	    					p2.classList.add("hide");
+    	    					p4.classList.add("hide");
+    	    					break;
+    	    		case "p4": 	p4.classList.remove("hide");
+    	    					p3.classList.add("hide");
+    	    					p1.classList.add("hide");
+    	    					break;
+    	    		default: break;
+    	    	}
+    	    }
+    	    
+    	});
+    </script>
+</body>
+
+</html>

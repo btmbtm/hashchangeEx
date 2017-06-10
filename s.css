@@ -1,0 +1,12 @@
+p{
+
+}
+
+body{
+	max-width:  700px;
+	margin: 20px auto;
+}
+
+.hide{
+	display: none;
+}
